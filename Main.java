@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array = new int[] {14, 43, 4, 9, 3, 31, 2, 13, 3, 4, 11, 54, 3, 55, 7};
+        int[] array = createArray();
         int min = minValue(array);
         int average = averageValue(array);
         System.out.println("Сумма минимального значения и среднего арифметического = " + (min + average));
@@ -32,5 +32,19 @@ public class Main {
         }
         System.out.println("Среднее арифметическое = " + average);
         return average;
+    }
+    public static int[] createArray(){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите длину массива: ");
+        int length = in.nextInt();
+        int[] array = new int[length];
+        System.out.println("Заполните массив");
+        for (int i = 0; i < length; i++){
+            System.out.print("Введите " + i + " элемент: ");
+            array[i] = in.nextInt();
+        }
+        System.out.println("Вы создали массив: ");
+        System.out.println(Arrays.toString(array));
+        return array;
     }
 }
